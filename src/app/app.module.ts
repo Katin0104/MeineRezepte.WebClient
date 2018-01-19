@@ -8,20 +8,26 @@ import { CalendarModule } from './calendar/calendar.module';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipesModule } from './recipes/recipes.module';
 
+import {MatToolbarModule, MatIconModule} from '@angular/material';
+import { SearchComponent } from './search/search.component';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,
     CalendarModule,
     RecipesModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
