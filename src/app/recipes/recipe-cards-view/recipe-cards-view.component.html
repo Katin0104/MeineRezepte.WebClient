@@ -1,4 +1,11 @@
-<div class="d-flex justify-content-start">
+<div class="d-flex justify-content-start flex-wrap">
+
+  <mat-card (click)="openAddRecipeCardDialog()" class="add-card m-3">
+    <mat-card-content class="d-flex align-items-center justify-content-center h-100">
+      <i class="fa fa-plus fa-w fa-5x"></i>
+    </mat-card-content>
+  </mat-card>
+
   <div *ngFor="let recipeCard of recipeCardList" class="m-3">
     <app-recipe-card [recipe]="recipeCard"></app-recipe-card>
   </div>
