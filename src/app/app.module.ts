@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
@@ -23,9 +24,12 @@ import { SearchComponent } from './search/search.component';
   imports: [
     BrowserModule,
     RouterModule,
+    HttpClientModule,
+
     CalendarModule,
     RecipesModule,
     AppRoutingModule,
+
     MatToolbarModule,
     MatIconModule
   ],
