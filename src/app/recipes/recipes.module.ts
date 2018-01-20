@@ -8,6 +8,7 @@ import { RecipeCardsViewComponent } from './recipe-cards-view/recipe-cards-view.
 import { RecipesOverviewComponent } from './recipes-overview/recipes-overview.component';
 import { MatCardModule, MatButtonModule, MatIconModule } from '@angular/material';
 import { MatFormFieldModule } from '@angular/material';
+import { RecipesService } from './recipes.service';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { MatFormFieldModule } from '@angular/material';
     MatButtonModule,
     MatIconModule
   ],
-  declarations: [RecipeFilterComponent, RecipeCardComponent, RecipeCardsViewComponent, RecipesOverviewComponent]
+  declarations: [RecipeFilterComponent, RecipeCardComponent, RecipeCardsViewComponent, RecipesOverviewComponent],
+  providers: [RecipesService]
 })
 export class RecipesModule { }

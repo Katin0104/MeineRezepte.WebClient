@@ -1,3 +1,6 @@
-<p>
-  <app-recipe-card></app-recipe-card>
-</p>
+<div class="d-flex justify-content-start">
+  <div *ngFor="let recipeCard of recipeCardList" class="m-3">
+    <app-recipe-card [recipe]="recipeCard"></app-recipe-card>
+  </div>
+</div>
+

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipeCardViewModel, RecipesService } from '../recipes.service';
 
 @Component({
   selector: 'app-recipe-cards-view',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipeCardsViewComponent implements OnInit {
 
-  constructor() { }
+  public recipeCardList: Array<RecipeCardViewModel>;
+
+  constructor(private recipesService: RecipesService) {
+    this.recipeCardList = new Array<RecipeCardViewModel>();
+
+    this.recipesService.getRecipeCards().subscribe((recipes) => {
+      this.recipeCardList = recipes;
+    });
+  }
 
   ngOnInit() {
   }

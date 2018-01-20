@@ -1,18 +1,16 @@
-<mat-card class="example-card">
-  <mat-card-header class="d-flex justify-content-start">
-    <div>
-      <mat-card-title>{{name}}</mat-card-title>
-    </div>
-    <button mat-fab class="ml-auto p-2">
-      <mat-icon aria-label="Example icon-button with a heart icon">...</mat-icon>
+<mat-card class="recipe-card">
+  <mat-card-header>
+    <mat-card-title>{{recipe.name}}</mat-card-title>
+    <button mat-mini-fab id="recipe-menu-button" color="accent">
+      <mat-icon>...</mat-icon>
     </button>
   </mat-card-header>
-  <img mat-card-image src="{{imageURL}}">
+  <img mat-card-image src="{{recipe.imageURL}}">
   <mat-card-footer class="d-flex justify-content-between p-4">
-    <i class="fa fa-clock-o">{{totalTime}}</i>
-    <i class="fa fa-sign-language">{{workingTime}}</i>
-    <i class="fa fa-star">{{favorite}}</i>
-    <i class="fa fa-users">{{portions}}</i>
+    <i class="fa fa-clock-o">{{recipe.totalTime}}</i>
+    <i class="fa fa-sign-language">{{recipe.workingTime}}</i>
+    <i class="fa fa-star">{{recipe.favorite}}</i>
+    <i class="fa fa-users">{{recipe.portions}}</i>
   </mat-card-footer>
 
 </mat-card>

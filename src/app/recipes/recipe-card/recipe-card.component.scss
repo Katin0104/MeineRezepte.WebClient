@@ -1,9 +1,20 @@
-.example-card {
-    width: 400px;
-  }
-  
-  .example-header-image {
-    background-image: url('http://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
-  
+.recipe-card {
+  width: 400px;
+  height: 350px;
+}
+
+.example-header-image {
+  background-image: url('http://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+img {
+  object-fit: cover;
+  height: 200px;
+}
+
+#recipe-menu-button {
+  position: absolute;
+  right: -13px;
+  top: -12px;
+}
