@@ -1,3 +1,19 @@
-<p>
-  recipe-card works!
-</p>
+<mat-card class="example-card">
+  <mat-card-header class="d-flex justify-content-start">
+    <div>
+      <mat-card-title>{{name}}</mat-card-title>
+    </div>
+    <button mat-fab class="ml-auto p-2">
+      <mat-icon aria-label="Example icon-button with a heart icon">...</mat-icon>
+    </button>
+  </mat-card-header>
+  <img mat-card-image src="{{imageURL}}">
+  <mat-card-footer class="d-flex justify-content-between p-4">
+    <i class="fa fa-clock-o">{{totalTime}}</i>
+    <i class="fa fa-sign-language">{{workingTime}}</i>
+    <i class="fa fa-star">{{favorite}}</i>
+    <i class="fa fa-users">{{portions}}</i>
+  </mat-card-footer>
+
+</mat-card>
+  
