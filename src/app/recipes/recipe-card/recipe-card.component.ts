@@ -12,23 +12,7 @@ export class RecipeCardComponent implements OnInit {
   @Input()
   public recipe: RecipeCardViewModel;
 
-  /*public name: string;
-
-  @Input()
-  public portions: number;
-
-  @Input()
-  public totalTime: number;
-
-  @Input()
-  public workingTime: number;
-
-  @Input()
-  public favorite: boolean;
-
-  @Input()
-  public imageURL: string;*/
-
+  public defaultImage = 'http://media-cdn.sueddeutsche.de/image/sz.1.1895115/940x528?v=1392995436';
 
   constructor() {
   }

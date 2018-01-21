@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { RecipeCardViewModel } from '../recipes.service';
+import { RecipeCardViewModel, RecipesService } from '../recipes.service';
 
 @Component({
   selector: 'app-add-recipe-dialog',
@@ -10,11 +10,13 @@ import { RecipeCardViewModel } from '../recipes.service';
 export class AddRecipeDialogComponent implements OnInit {
 
   public recipeFormData: RecipeCardViewModel;
+  public isSubmitPressed: Boolean;
 
   constructor(
     public dialogRef: MatDialogRef<AddRecipeDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) {
+    @Inject(MAT_DIALOG_DATA) public data: any, private recipeService: RecipesService) {
       this.recipeFormData = new RecipeCardViewModel();
+      this.recipeFormData.favorite = false;
     }
 
   ngOnInit() {
@@ -25,5 +27,12 @@ export class AddRecipeDialogComponent implements OnInit {
   }
 
   public onSubmit() {
+    if (!this.isSubmitPressed) {
+      this.recipeService.createRecipeFromRecipeCard(this.recipeFormData).subscribe((resp: any) => {
+        this.closeDialog();
+      });
+    }
+
+    this.isSubmitPressed = true;
   }
 }

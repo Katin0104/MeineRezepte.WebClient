@@ -35,7 +35,7 @@
 <div class="d-flex justify-content-end align-items-center mt-3">
   
   <button class="mr-2" mat-button color="primary" (click)="closeDialog()">Abbrechen</button>
-  <button type="submit" [disabled]="!recipeForm.form.valid" class="mr-2" mat-raised-button color="primary">Rezept anlegen</button>
+  <button type="submit" [disabled]="!recipeForm.form.valid || isSubmitPressed" class="mr-2" mat-raised-button color="primary">Rezept anlegen</button>
 </div>
 
 </form>

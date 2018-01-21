@@ -22,7 +22,10 @@ export class RecipesService {
   public getRecipeCards(): Observable<Array<RecipeCardViewModel>> {
     // Später HTTP Call gegen Backend
     // return this.recipeCardObservable;
-    return this.http.get<Array<RecipeCardViewModel>>('api/recipes/listCards');
+    return this.http.get<Array<RecipeCardViewModel>>('api/recipeCards/listCards');
   }
 
+  public createRecipeFromRecipeCard(recipeVM: RecipeCardViewModel): Observable<any> {
+    return this.http.post<any>('api/recipeCards', recipeVM);
+  }
 }

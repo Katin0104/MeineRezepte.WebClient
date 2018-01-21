@@ -5,7 +5,7 @@
       <mat-icon>...</mat-icon>
     </button>
   </mat-card-header>
-  <img mat-card-image src="{{recipe.imageURL}}">
+  <img mat-card-image src="{{recipe.imageURL ? recipe.imageURL : defaultImage}}">
   <mat-card-footer class="d-flex justify-content-between p-4">
     <i class="fa fa-clock-o">{{recipe.totalTime}}</i>
     <i class="fa fa-sign-language">{{recipe.workingTime}}</i>

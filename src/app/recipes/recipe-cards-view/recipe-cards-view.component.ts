@@ -15,19 +15,27 @@ export class RecipeCardsViewComponent implements OnInit {
   constructor(private recipesService: RecipesService, public dialog: MatDialog) {
     this.recipeCardList = new Array<RecipeCardViewModel>();
 
-    this.recipesService.getRecipeCards().subscribe((recipes) => {
-      this.recipeCardList = recipes;
-    });
+    this.initRecipes();
   }
 
   ngOnInit() {
   }
 
-  public openAddRecipeCardDialog() {
-    const dialogRef = this.dialog.open(AddRecipeDialogComponent, {
-      width: '500px',
-      data: {  }
+  private initRecipes() {
+    this.recipesService.getRecipeCards().subscribe((recipes) => {
+      this.recipeCardList = recipes;
     });
+  }
+
+  public openAddRecipeCardDialog() {
+    const dialogRef = this.dialog
+      .open(AddRecipeDialogComponent, {
+        width: '500px',
+        data: {  }
+      })
+      .afterClosed().subscribe((data: any) => {
+        this.initRecipes();
+      });
   }
 
 }
