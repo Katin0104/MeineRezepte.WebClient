@@ -1,10 +1,10 @@
-<form #recipeForm class="example-form">
+<form (ngSubmit)="onSubmit()" #recipeForm="ngForm" class="example-form">
   <h5 class="mx-2">
     Welches Rezept soll neu angelegt werden?
   </h5>
   <!-- Name -->
   <mat-form-field class="w-100 p-2">
-    <input name="recipeName" #recipeName="ngModel"
+    <input name="recipeName" #recipeName="ngModel" required
       [(ngModel)]="recipeFormData.name" matInput placeholder="Rezeptname">
   </mat-form-field>
 
@@ -12,19 +12,19 @@
   <div class="d-flex justify-content-between">
   <mat-form-field class="p-2 minWidth">
     <span matPrefix class="fa fa-clock-o mr-2"></span>
-    <input type="number" min="0" max="360" name="totalTime" #totalTime="ngModel"
+    <input type="number" min="0" max="360" name="totalTime" #totalTime="ngModel" required
       [(ngModel)]="recipeFormData.totalTime" matInput placeholder="Gesamtdauer">
   </mat-form-field>
   
   <mat-form-field class="p-2 minWidth">
     <span matPrefix class="fa fa-sign-language mr-2"></span>
-    <input type="number" min="0" max="240" name="workingTime" #workingTime="ngModel"
+    <input type="number" min="0" max="240" name="workingTime" #workingTime="ngModel" required
       [(ngModel)]="recipeFormData.workingTime" matInput placeholder="Arbeitszeit">
   </mat-form-field>
   
   <mat-form-field class="p-2 minWidth">
     <span matPrefix class="fa fa-users mr-2"></span>
-    <input type="number" min="0" max="100" type="number" name="portions" #portions="ngModel"
+    <input type="number" min="0" max="100" type="number" name="portions" #portions="ngModel" required
       [(ngModel)]="recipeFormData.portions" matInput placeholder="Portionen">
   </mat-form-field>
 </div>
@@ -34,8 +34,8 @@
   
 <div class="d-flex justify-content-end align-items-center mt-3">
   
-  <button class="mr-2" mat-button color="primary">Abbrechen</button>
-  <button class="mr-2" mat-raised-button color="primary">Rezept anlegen</button>
+  <button class="mr-2" mat-button color="primary" (click)="closeDialog()">Abbrechen</button>
+  <button type="submit" [disabled]="!recipeForm.form.valid" class="mr-2" mat-raised-button color="primary">Rezept anlegen</button>
 </div>
 
 </form>

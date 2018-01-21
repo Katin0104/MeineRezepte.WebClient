@@ -20,4 +20,10 @@ export class AddRecipeDialogComponent implements OnInit {
   ngOnInit() {
   }
 
+  public closeDialog() {
+    this.dialogRef.close();
+  }
+
+  public onSubmit() {
+  }
 }
