@@ -10,15 +10,7 @@ export class RecipeCardViewModel {
   public favorite: boolean;
   public imageURL: string;
 
-  constructor(name: string, portions: number,
-    totalTime: number, workingTime: number,
-    favorite: boolean, imageURL: string) {
-      this.name = name;
-      this.portions = portions;
-      this.totalTime = totalTime;
-      this.favorite = favorite;
-      this.imageURL = imageURL;
-  }
+  constructor() { }
 }
 
 @Injectable()

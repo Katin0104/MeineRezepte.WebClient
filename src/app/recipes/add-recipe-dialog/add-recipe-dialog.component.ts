@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { RecipeCardViewModel } from '../recipes.service';
 
 @Component({
   selector: 'app-add-recipe-dialog',
@@ -8,9 +9,13 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 })
 export class AddRecipeDialogComponent implements OnInit {
 
+  public recipeFormData: RecipeCardViewModel;
+
   constructor(
     public dialogRef: MatDialogRef<AddRecipeDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+    @Inject(MAT_DIALOG_DATA) public data: any) {
+      this.recipeFormData = new RecipeCardViewModel();
+    }
 
   ngOnInit() {
   }
