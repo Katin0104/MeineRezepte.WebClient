@@ -24,12 +24,15 @@ export class AddRecipeDialogComponent implements OnInit {
 
   public closeDialog() {
     this.dialogRef.close();
+
+    // verhindert das onSubmit aufgerufen wird.
+    return false;
   }
 
   public onSubmit() {
     if (!this.isSubmitPressed) {
       this.recipeService.createRecipeFromRecipeCard(this.recipeFormData).subscribe((resp: any) => {
-        this.closeDialog();
+        this.dialogRef.close();
       });
     }
 
