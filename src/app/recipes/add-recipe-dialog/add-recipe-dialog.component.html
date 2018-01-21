@@ -28,12 +28,14 @@
       [(ngModel)]="recipeFormData.portions" matInput placeholder="Portionen">
   </mat-form-field>
 </div>
-  
-<div class="d-flex justify-content-between align-items-center">
-  <mat-checkbox class="p-2" name="favorite" #favorite="ngModel"
-    [(ngModel)]="recipeFormData.favorite"> Zu Favoriten hizufügen</mat-checkbox>
 
-  <button class="mx-2" mat-raised-button color="primary">Rezept anlegen</button>
+<mat-checkbox class="p-2" name="favorite" #favorite="ngModel"
+[(ngModel)]="recipeFormData.favorite"> Zu Favoriten hizufügen</mat-checkbox>
+  
+<div class="d-flex justify-content-end align-items-center mt-3">
+  
+  <button class="mr-2" mat-button color="primary">Abbrechen</button>
+  <button class="mr-2" mat-raised-button color="primary">Rezept anlegen</button>
 </div>
 
 </form>
