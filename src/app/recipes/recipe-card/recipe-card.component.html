@@ -1,7 +1,7 @@
 <mat-card class="recipe-card">
   <mat-card-header>
     <mat-card-title>{{recipe.name}}</mat-card-title>
-    <button mat-mini-fab id="recipe-menu-button" color="accent">
+    <button (click)="openActionsMenu()" mat-mini-fab id="recipe-menu-button" color="accent">
       <mat-icon>...</mat-icon>
     </button>
   </mat-card-header>

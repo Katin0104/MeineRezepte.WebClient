@@ -28,4 +28,8 @@ export class RecipesService {
   public createRecipeFromRecipeCard(recipeVM: RecipeCardViewModel): Observable<any> {
     return this.http.post<any>('api/recipeCards', recipeVM);
   }
+
+  public updateRecipeFromRecipeCard(recipeVM: RecipeCardViewModel): Observable<any> {
+    return this.http.put<any>('api/recipeCards', recipeVM);
+  }
 }
